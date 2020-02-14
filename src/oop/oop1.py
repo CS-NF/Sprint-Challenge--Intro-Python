@@ -22,28 +22,32 @@
 class Vehicle:
     pass
 
-class FlightVehicle:
+# inheritance of Vehicle class
+
+class FlightVehicle(Vehicle):
     pass
 
-class Starship:
+# inheritance of FlightVehicle class
+
+class Starship(FlightVehicle):
     pass
 
 # inheritance of Vehicle class
 
-class GroundVehicle:
+class GroundVehicle(Vehicle):
     pass
 
 #  inheritance of FlightVehicle class
 
-class Airplane:
+class Airplane(FlightVehicle):
     pass
 
 # inheritance of GroundVehicle class
 
-class Car:
+class Car(GroundVehicle):
     pass
 
-class Motorcycle:
+class Motorcycle(GroundVehicle):
     pass
 
 
