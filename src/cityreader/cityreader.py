@@ -35,8 +35,8 @@ def cityreader(cities=[]):
   # For each city record, create a new City instance and add it to the 
   # `cities` list
 
-   path = os.path.dirname(os.path.realpath(__file__))
-   
+   path = os.path.dirname(os.path.realpath(__file__)) # could only find the path locally
+
    with open(f"{path}/cities.csv", "r") as csv_file: # opens the city file
     open_csv = csv.reader(csv_file)
     next(open_csv) # next() is calling for csv file to open
