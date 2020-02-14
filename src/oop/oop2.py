@@ -9,11 +9,11 @@ class GroundVehicle():
 
     # TODO
 
-def __str__(self):
-    return "GroundVehicle"
+    def __str__(self):
+        return "GroundVehicle"
 
-def drive(self):
-    return "vroooom"
+    def drive(self):
+        return "vroooom"
 
 # Subclass Motorcycle from GroundVehicle.
 #
