@@ -25,47 +25,92 @@ humans = [
 # whose name starts with 'D':
 print("Starts with D:")
 a = []
-print(a)
+
+letter_d = "D"
+for i in humans:
+    if i.name[0] == letter_d: 
+        a.append(i.name)
+    else:
+         None
+
+    print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
 b = []
-print(b)
+
+letter_e = "e"
+for i in humans:
+    if i.name[-1] == letter_e:
+        b.append(i.name)
+    else:
+        None
+
+    print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
 c = []
-print(c)
+
+latter_c_g = "C", "D", "E", "F", "G"
+for i in humans:
+    if i.name[0] in latter_c_g:
+        c.append(i.name)
+    else:
+        None
+
+    print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
 d = []
-print(d)
+
+for i in humans:
+    if i.age:
+        d.append(i.age + 10)
+
+    print(d)
 
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
-e = []
+e = [f"{i.name}-{i.age}" for i in humans]
 print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
 # inclusive.
 print("Names and ages between 27 and 32:")
-f = []
+f = [(i.name, i.age) for i in humans if int(i.age) in range(27, 33)]
+
+# Why does test not pass when I do this?
+# for i in humans:
+#     if i.age in range(27,33): # had to do two if statments beacuse can't append two arguments
+#         f.append(i.name)
+#     if i.age in range(27, 33):
+#         f.append(i.age)
+#     else:
+#         None
+
 print(f)
 
 # Write a list comprehension that creates a list of new Humans like the old
 # list, except with all the names uppercase and the ages with 5 added to them.
 # The "humans" list should be unmodified.
 print("All names uppercase:")
-g = []
+g = [Human(i.name.upper(), i.age + 5) for i in humans]
+
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
 import math
 h = []
-print(h)
+
+for i in humans:
+    if i.age:
+        h.append(math.sqrt(i.age))
+
+    print(h)
